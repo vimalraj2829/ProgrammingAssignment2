@@ -8,12 +8,6 @@
 ## 3. set the value of inverse of the matrix
 ## 4. get the value of inverse of the matrix
 
-
-## The function makeCacheMatrix will return the inverse of the matrix. It first looks It first checks
-## for the exitence of an already commputed inverse. If present,it the retieves the inverted matrix.
-## If absent, the function computes the inverse of the matrix and it computes the inverse, and sets
-## in the cache
-
 makeCacheMatrix <- function(x = matrix()) {
   invert <- NULL
   set <- function(mat) {
@@ -26,10 +20,12 @@ makeCacheMatrix <- function(x = matrix()) {
   list(set=set, get=get, setinverse=setinverse, getinverse=getinverse)
 }
 
+## The function makeCacheMatrix will return the inverse of the matrix. It first looks It first checks
+## for the exitence of an already commputed inverse. If present,it the retieves the inverted matrix.
+## If absent, the function computes the inverse of the matrix and it computes the inverse, and sets
+## in the cache
 
-## Write a short comment describing this function
-
-# This function works assuming that the matrix is always invertible 
+## This function works assuming that the matrix is always invertible 
 cacheSolve <- function(x, ...) {
   invert <- x$getinverse()
   if(!is.null(invert)) {
